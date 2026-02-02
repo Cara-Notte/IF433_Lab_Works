@@ -5,10 +5,8 @@ fun main() {
     val price = 99000
     val discount = calculateDiscount(price)
 
-    println("Judul: $gameTitle")
-    println("Harga Asli: $price")
-    println("Diskon: $discount")
-    println("Harga Akhir: ${price - discount}")
+    val finalPrice = price - discount
+    printReceipt(finalPrice = finalPrice, title = gameTitle)
 }
 
 fun calculateDiscount(price: Int): Int = when {
@@ -16,4 +14,10 @@ fun calculateDiscount(price: Int): Int = when {
     price >= 200000 -> price * 40 / 100
     price >= 75000 -> price * 20 / 100
     else -> 0
+}
+
+fun printReceipt(title: String, finalPrice: Int) {
+    println("=== RECEIPT ===")
+    println("Judul : $title")
+    println("Harga Akhir : $finalPrice")
 }
