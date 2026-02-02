@@ -11,7 +11,11 @@ fun main() {
         else -> "D"
     }
 
+    val studentId: String? = null
+    val idLength = studentId?.length ?: 0
+
     println("Nama: $name, Nilai: $score")
+    println("Panjang ID: $idLength")
     println("Grade kamu: $grade")
     println("Status: ${calculateStatus(score)}")
 }
