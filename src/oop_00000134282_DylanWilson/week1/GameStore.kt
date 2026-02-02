@@ -4,9 +4,10 @@ fun main() {
     val gameTitle = "Lobotomy Corporation"
     val price = 99000
     val discount = calculateDiscount(price)
-
     val finalPrice = price - discount
-    printReceipt(finalPrice = finalPrice, title = gameTitle)
+
+    val note: String? = null
+    printReceipt(finalPrice = finalPrice, title = gameTitle, note = note)
 }
 
 fun calculateDiscount(price: Int): Int = when {
@@ -16,8 +17,9 @@ fun calculateDiscount(price: Int): Int = when {
     else -> 0
 }
 
-fun printReceipt(title: String, finalPrice: Int) {
+fun printReceipt(title: String, finalPrice: Int, note: String?) {
     println("=== RECEIPT ===")
     println("Judul : $title")
     println("Harga Akhir : $finalPrice")
+    println("Catatan : ${note ?: "Tidak ada catatan"}")
 }
