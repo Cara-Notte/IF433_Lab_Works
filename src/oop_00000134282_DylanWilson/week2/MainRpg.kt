@@ -18,7 +18,7 @@ fun main() {
     println("\n=== BATTLE START ===")
 
     while (hero.isAlive() && enemyHp > 0) {
-        println("\nHP ${hero.name}: ${hero.hp}")
+        println("\nHP ${hero.heroName}: ${hero.hp}")
         println("HP Musuh: $enemyHp")
         println("1. Serang")
         println("2. Kabur")
@@ -37,12 +37,12 @@ fun main() {
                     val enemyDamage = (10..20).random()
                     println("Musuh menyerang balik! Damage: $enemyDamage")
                     hero.takeDamage(enemyDamage)
-                    println("HP ${hero.name} tersisa: ${hero.hp}")
+                    println("HP ${hero.heroName} tersisa: ${hero.hp}")
                 }
             }
 
             2 -> {
-                println("${hero.name} kabur dari pertarungan!")
+                println("${hero.heroName} kabur dari pertarungan!")
                 break
             }
 
@@ -54,9 +54,9 @@ fun main() {
 
     println("\n=== HASIL PERTARUNGAN ===")
     if (hero.isAlive() && enemyHp <= 0) {
-        println("${hero.name} MENANG!")
+        println("${hero.heroName} MENANG dengan sisa hp ${hero.hp}!")
     } else if (!hero.isAlive() && enemyHp > 0) {
-        println("Musuh MENANG!")
+        println("Musuh MENANG dengan sisa hp ${enemyHp}!")
     } else {
         println("Pertarungan berakhir tanpa pemenang.")
     }
