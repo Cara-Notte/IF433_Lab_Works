@@ -1,13 +1,13 @@
 package oop_00000134282_DylanWilson.week2
 
 class Hero(
-    val name: String,
+    val heroName: String,
     var hp: Int = 100,
     val baseDamage: Int
 ) {
 
     fun attack(targetName: String) {
-        println("$name menebas $targetName!")
+        println("$heroName menebas $targetName!")
     }
 
     fun takeDamage(damage: Int) {
