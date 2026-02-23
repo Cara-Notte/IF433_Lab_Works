@@ -17,4 +17,22 @@ fun main(){
     MyTesla.accelerate()
     MyTesla.honk()
     MyTesla.openTrunk()
+
+    val manager = Manager(
+        name = "Andy",
+        baseSalary = 10000000
+    )
+
+    val developer = Developer(
+        name = "Bob",
+        baseSalary = 8000000,
+        programmingLanguage = "Kotlin"
+    )
+
+    manager.work()
+    println("Bonus Manager: Rp ${manager.calculateBonus()}")
+
+    developer.work()
+    println("Bonus Developer: Rp ${developer.calculateBonus()}")
+
 }
