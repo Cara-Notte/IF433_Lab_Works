@@ -29,4 +29,22 @@ fun main() {
     println(math.hitungLuas(7.0))      // lingkaran
 
     // task 2
+    val eWallet = EWallet(
+        accountName = "Dylan",
+        balance = 50000.0
+    )
+
+    val creditCard = CreditCard(
+        accountName = "Dylan",
+        limit = 100000.0
+    )
+
+    val paymentMethods: List<PaymentMethod> = listOf(
+        eWallet,
+        creditCard
+    )
+
+    for (method in paymentMethods) {
+        method.processPayment(75000.0)
+    }
 }
