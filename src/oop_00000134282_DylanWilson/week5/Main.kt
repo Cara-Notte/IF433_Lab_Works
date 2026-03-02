@@ -45,6 +45,16 @@ fun main() {
     )
 
     for (method in paymentMethods) {
+
         method.processPayment(75000.0)
+
+        // Smart casting challenge
+        if (method is EWallet) {
+            println("Top up otomatis untuk EWallet...")
+            method.topUp(50000.0)
+
+            // Repay
+            method.processPayment(75000.0)
+        }
     }
 }
