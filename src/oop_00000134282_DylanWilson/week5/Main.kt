@@ -20,4 +20,13 @@ fun main() {
         }
         println("-------------------------")
     }
+
+    // task 1
+    val math = MathHelper()
+
+    println(math.hitungLuas(4))        // persegi
+    println(math.hitungLuas(6, 3))     // persegi panjang
+    println(math.hitungLuas(7.0))      // lingkaran
+
+    // task 2
 }
