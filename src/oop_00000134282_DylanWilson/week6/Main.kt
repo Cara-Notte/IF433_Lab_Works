@@ -33,4 +33,16 @@ fun main(){
         id = "C001",
         name = "Ezviz Garasi"
     )
+
+    val hub = SmartHomeHub()
+
+    hub.addDevice(lamp)
+    hub.addDevice(speaker)
+    hub.addDevice(cctv)
+
+    println("\n=== Security Mode Activated ===")
+    hub.activateSecurityMode()
+
+    println("\n=== Turning Off All Switchable Devices ===")
+    hub.turnOffAllSwitches()
 }
