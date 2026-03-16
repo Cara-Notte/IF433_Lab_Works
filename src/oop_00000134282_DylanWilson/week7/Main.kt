@@ -25,4 +25,11 @@ fun main () {
     println("Hasil Copy: $data3")
     val (userName, userAge) = data1
     println("Destructured: $userName berumur $userAge")
+
+    println("\n=== TEST SEALED CLASS ===")
+    val response: ApiResponse = ApiResponse.Success("Data berhasil ditarik!")
+    val uiMessage = when (response) {
+        is ApiResponse.Success -> "Tampilkan: ${response.data}"
+        is ApiResponse.Error -> "Tampilkan: ${response.message}"
+    }
 }
