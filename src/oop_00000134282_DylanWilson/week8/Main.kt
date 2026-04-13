@@ -17,6 +17,7 @@ fun main() {
 
     println(receipt)
 
+
     println("\n=== TEST SAFE CASTING ===")
     val mixedData: List<Any> = listOf(
         "Smartphone",
@@ -26,6 +27,8 @@ fun main() {
         4500000.0
     )
 
+
+
     for (item in mixedData) {
         val text = item as? String
 
@@ -34,10 +37,14 @@ fun main() {
         }
     }
 
+
+
     val someObject: Any = 100
     val safeString = someObject as? String ?: "Unknown String"
     println("Hasil cast + fallback: $safeString")
     println("Test done")
+
+
 
     println("\n=== TEST THE RED BUTTON (!!) ===")
     val toxicData: String? = null
@@ -48,6 +55,7 @@ fun main() {
         println("CRASH (NPE)! Jangan gunakan !! secara sembarangan.")
     }
 
+
     val apiResponse: Map<String, String?> = mapOf("status" to "200", "token" to null)
     try {
         val token = requireNotNull(apiResponse["token"]) {
@@ -57,4 +65,10 @@ fun main() {
     } catch (e: IllegalArgumentException) {
         println(e.message)
     }
+
+
+    println("\n=== TEST JAVA INTEROP ===")
+    val javaResponse = LegacyJavaAPI.fetchServerStatus()
+    val statusLength = javaResponse!!.length
+    println("Status dari Java: $javaResponse (Length: $statusLength)")
 }
