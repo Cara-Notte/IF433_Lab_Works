@@ -36,5 +36,5 @@ fun main() {
     worstPerformersString.forEach { println(it) }
 
     println("\nUnique Pairs:")
-    println(uniquePairs)
+    uniquePairs.forEach { println(it) }
 }
