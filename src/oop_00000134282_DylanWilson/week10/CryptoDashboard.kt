@@ -16,6 +16,12 @@ fun main() {
         println("Coin: ${coin.name}, Balance: ${coin.balance}")
     }
 
+    println("\n=== SEARCH COIN ===")
+    val searchResult = coinRepo.searchByName("BT")
+    searchResult.forEach { coin ->
+        println("Found: $coin")
+    }
+
     val txRepo = WalletRepository<Transaction>()
 
     txRepo.add(Transaction("TX001", 250.0))
