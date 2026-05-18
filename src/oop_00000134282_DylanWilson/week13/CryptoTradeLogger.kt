@@ -79,8 +79,8 @@ fun main() {
     )
 
     saveTrades(simulatedTrades, path = "crypto_trades.csv")
-    // saveTrades
 
+    // corrupt
     File("crypto_trades.csv").appendText("CORRUPT_ID,DOGEUSDT,Hold,XX,YY\n")
 
     val loadedData = loadTrades(path = "crypto_trades.csv")
