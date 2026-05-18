@@ -47,6 +47,7 @@ fun loadTrades(path: String): List<TradeRecord> {
         println("Error: File tidak ditemukan!")
         emptyList()
     }
+    // try catch
 }
 
 fun main() {
