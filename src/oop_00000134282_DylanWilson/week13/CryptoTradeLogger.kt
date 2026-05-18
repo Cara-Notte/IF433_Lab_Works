@@ -88,4 +88,5 @@ fun main() {
     }
 
     println("==== TOTAL PnL BERSIH: $totalPnl ====")
+    fun TradeRecord.toCsv(): String = "$id,$symbol,$type,$margin,$pnl"
 }
