@@ -52,6 +52,7 @@ fun loadTrades(path: String): List<TradeRecord> {
     // try catch
 }
 
+// main
 fun main() {
     val simulatedTrades = listOf(
         TradeRecord(
