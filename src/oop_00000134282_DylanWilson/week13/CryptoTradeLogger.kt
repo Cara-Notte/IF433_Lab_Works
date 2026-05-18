@@ -30,6 +30,7 @@ fun fromCsvTrade(line: String): TradeRecord? {
     }
 }
 
+// save trades
 fun saveTrades(trades: List<TradeRecord>, path: String) {
     File(path).printWriter().use { writer ->
         trades.forEach { trade ->
@@ -38,6 +39,7 @@ fun saveTrades(trades: List<TradeRecord>, path: String) {
     }
 }
 
+// load trades
 fun loadTrades(path: String): List<TradeRecord> {
     return try {
         File(path).readLines().mapNotNull { line ->
