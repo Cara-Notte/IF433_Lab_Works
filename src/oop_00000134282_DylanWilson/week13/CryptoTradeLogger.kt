@@ -83,8 +83,8 @@ fun main() {
     // corrupt
     File("crypto_trades.csv").appendText("CORRUPT_ID,DOGEUSDT,Hold,XX,YY\n")
 
+    // save laoded data
     val loadedData = loadTrades(path = "crypto_trades.csv")
-
     val totalPnl = loadedData.sumOf { it.pnl }
 
     println("==== VALID TRADE ENTRIES ====")
