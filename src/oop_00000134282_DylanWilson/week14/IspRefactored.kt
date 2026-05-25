@@ -11,3 +11,9 @@ interface Scannable {
 interface Faxable {
     fun fax(doc: String)
 }
+
+class ModernSimplePrinter : Printable {
+    override fun print(doc: String) {
+        println("Printing securely: $doc")
+    }
+}
